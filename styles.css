@@ -1,0 +1,32 @@
+.course-content .sectionul{
+    margin: 0;
+    padding: 0;
+}
+
+.course-content .sectionul li{
+    list-style: none;
+}
+
+#sectiontd-0 .no-overflow{
+    overflow: inherit;
+}
+
+#sectiontd-0 p{
+    margin: 0;
+}
+
+#sectiontd-0 p img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 !important;
+}
+
+#sections-tabs{
+    background: #FFF;
+    padding: 1rem;
+}
+
+#sections-tabs .tab-content{
+    border: 0;
+}
