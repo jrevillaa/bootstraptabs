@@ -38,7 +38,8 @@ echo $OUTPUT->header();
 		$list = explode(PHP_EOL,$DB->get_record('user_info_field',  array('categoryid' =>  1))->param1);
 
 		$total_alumnos = 0;
-		$rand = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
+		//$rand = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
+		$rand = array('0', '1', '2', '3', '4',  'd', 'e', 'f');
     	
 
 		echo '<div id="canvas-holder">';
@@ -91,16 +92,7 @@ echo $OUTPUT->header();
 		$leyenda .= html_writer::end_tag('ul');
 
 		echo $leyenda;
-
-        //echo '<pre>';
-        //echo print_r(array_keys($USER->profile));
-
-        //echo print_r($list);
-
-        //echo print_r($DB->get_records_sql($sql_group));
-        //echo '</pre>';
-
-        
+       
 
 		echo '<script>';
 		echo 'var pieData = [';
