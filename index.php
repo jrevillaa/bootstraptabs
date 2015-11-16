@@ -21,11 +21,11 @@ $name = get_string('pluginname','format_bootstraptabs');
 
 $PAGE->set_context($context);
 
-$PAGE->navbar->add($name);
+$PAGE->navbar->add('Compañeros de Clase');
 
-$PAGE->set_title($name);
+$PAGE->set_title('Compañeros de Clase');
 
-$PAGE->set_heading($name);
+$PAGE->set_heading('Compañeros de Clase');
 
 
 echo $OUTPUT->header();
