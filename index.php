@@ -46,7 +46,7 @@ echo $OUTPUT->header();
 		echo '</div>';
 		//echo '<br>total de alumnos = ' . $total_alumnos;
 
-    	
+  
     	//tabala leyenda
     	$leyenda = '';
     	$leyenda .= html_writer::start_tag('ul', array('class'=>'leyenda'));
