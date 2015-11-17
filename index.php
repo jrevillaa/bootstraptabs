@@ -71,18 +71,24 @@ echo $OUTPUT->header();
 				$info[$value] =  array(count($data), $color);	
 			}
 				
-			$leyenda .= html_writer::start_tag('li');
 
-			$leyenda .= html_writer::tag('span', '', array('class'=>'color', 'style'=>'background:'.$info[$value][1].';'));
-			$leyenda .= html_writer::tag('span', $value . ': ' . count($data) , array('class'=>'name'));
-
-			$leyenda .= html_writer::end_tag('li');
-
-				//echo $value . ' = ' . count($data) . ' ' . $info[$value][1] . '<br>';
-				$total_alumnos += count($data);
+				$total_alumnos += $info[$value][0];
 			
 
 		}
+
+		array_multisort($info,SORT_DESC);
+
+
+		foreach ($info as $key=>$value) {
+			$leyenda .= html_writer::start_tag('li');
+
+			$leyenda .= html_writer::tag('span', '', array('class'=>'color', 'style'=>'background:'.$value[1].';'));
+			$leyenda .= html_writer::tag('span', $key . ': ' . $value[0] , array('class'=>'name'));
+
+			$leyenda .= html_writer::end_tag('li');
+		}
+		
 
 		$leyenda .= html_writer::start_tag('li', array('class'=>'total-alumnos'));
 		$leyenda .= html_writer::tag('span', 'TOTAL: ' . $total_alumnos, array('class'=>'name bold'));
@@ -92,15 +98,7 @@ echo $OUTPUT->header();
 
 		echo $leyenda;
 
-        //echo '<pre>';
-        //echo print_r(array_keys($USER->profile));
 
-        //echo print_r($list);
-
-        //echo print_r($DB->get_records_sql($sql_group));
-        //echo '</pre>';
-
-        
 
 		echo '<script>';
 		echo 'var pieData = [';
