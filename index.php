@@ -75,18 +75,20 @@ echo $OUTPUT->header();
 				$total_alumnos += $info[$value][0];
 			
 
-		}
+		} 
 
 		array_multisort($info,SORT_DESC);
 
 
 		foreach ($info as $key=>$value) {
-			$leyenda .= html_writer::start_tag('li');
+			if($value[0] > 0){
+				$leyenda .= html_writer::start_tag('li');
 
-			$leyenda .= html_writer::tag('span', '', array('class'=>'color', 'style'=>'background:'.$value[1].';'));
-			$leyenda .= html_writer::tag('span', $key . ': ' . $value[0] , array('class'=>'name'));
+				$leyenda .= html_writer::tag('span', '', array('class'=>'color', 'style'=>'background:'.$value[1].';'));
+				$leyenda .= html_writer::tag('span', $key . ': ' . $value[0] , array('class'=>'name'));
 
-			$leyenda .= html_writer::end_tag('li');
+				$leyenda .= html_writer::end_tag('li');
+			}
 		}
 		
 
